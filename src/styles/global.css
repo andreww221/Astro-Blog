@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+@theme {
+  --background: white;
+  --foreground: black;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+.dark .show-button {
+  background-color: white;
+  transition: all ease 0.4s;
+}
+
+.dark .show-button svg path {
+  stroke: black !important;
+}
+
+.dark svg path {
+  stroke: white !important;
+}

@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button class="p-3 rounded-2xl hover:cursor-pointer lg:hidden" id="buttonShowMenu">
+    <Icon class="w-5 h-5" id="imgShow" name="icon-menu" />
+
+    <Icon class="w-5 h-5 hidden" id="imgHide" name="icon-menu-close" />
+</button>
+
+
+
+<style>
+    .show-button {
+        background-color: #34302d;
+        transition: all ease 0.4s;
+    }
+</style>

@@ -9,6 +9,27 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 
+@font-face {
+  font-family: "DM_Sans";
+  src: url('/public/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format("woff2");
+
+
+}
+
+@font-face {
+  font-family: "Fira_Code";
+  src: url('/public/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  font-family: "DM_Sans", sans-serif;
+}
+
+
 .dark .show-button {
   background-color: white;
   transition: all ease 0.4s;
@@ -20,4 +41,52 @@
 
 .dark svg path {
   stroke: white !important;
+}
+
+.dark .social-media svg path {
+  stroke: white !important;
+  fill: white !important;
+}
+
+
+p {
+  font-size: 1.2rem;
+}
+
+.sec-p {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.lineDown-a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  left: 0px;
+  bottom: -3px;
+  z-index: -2;
+  background-color: #93cefc;
+}
+
+
+footer a:hover svg path,
+footer a:hover svg use{
+    stroke:#C0BFBF !important;
+    fill: #C0BFBF !important;
+    transition: all ease 0.3s;
+}
+
+
+a:focus,
+button:focus{
+  outline: #5792C0 auto 2px !important;
+
+}
+
+a:focus{
+  border-radius: 15px;
+  padding:2px;
 }

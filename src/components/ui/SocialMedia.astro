@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socialMedia = [
+    { name: "twitter", link: "https://x.com/", nameIcon: "logo-x" },
+    { name: "github", link: "https://github.com/", nameIcon: "logo-github" },
+    {
+        name: "linkedin",
+        link: "https://www.linkedin.com//",
+        nameIcon: "logo-linkedin",
+    },
+];
+
+
+interface Props{
+    notStyleItems?:boolean,
+}
+
+
+const {notStyleItems} = Astro.props;
+
+---
+
+<ul class="social-media flex flex-row gap-3">
+    {
+        socialMedia.map((social) => (
+            <li>
+                <a
+                    class:list={[
+                        `bg-white w-10 h-10 rounded-2xl  flex items-center justify-center border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-200 hover:transition-all hover:duration-300`,
+                        {
+                            "bg-transparent!":notStyleItems,
+                            "border-none!":notStyleItems,
+                            "w-8!":notStyleItems,
+                            "h-8!":notStyleItems,
+                            "rounded-2xl!":notStyleItems,
+                        }
+                    ]}
+                    href={social.link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    aria-label={`Open ${social.name} from Paulina`}
+                    title={`Open ${social.name} from Paulina`}
+                >
+                    <Icon  name={social.nameIcon}  />
+                </a>
+            </li>
+        ))
+    }
+</ul>

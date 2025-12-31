@@ -1,17 +1,16 @@
 ---
 
-import NavItem from "./header/NavItem.astro";
+import NavItem from "@components/layout/header/NavItem.astro";
 
-import MenuButton from "./header/MenuButton.astro";
+import MenuButton from "@components/layout/header/MenuButton.astro";
 
-import ModeButton from "./header/ModeButton.astro";
+import ModeButton from "@components/layout/header/ModeButton.astro";
 
-import { Icon } from "astro-icon/components";
 
 ---
 
 <header
-    class="relative flex flex-row justify-between bg-white p-2 rounded-2xl items-center border border-neutral-200 dark:bg-neutral-800"
+    class="relative  flex flex-row justify-between bg-white p-2 rounded-2xl items-center border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700"
 >
     <div>
         <img
@@ -24,7 +23,7 @@ import { Icon } from "astro-icon/components";
     <nav class="lg:w-full ">
         <ul
             id="menu"
-            class="rounded-2xl border border-neutral-200 py-4 px-4 left-0 absolute bottom transform translate-y-1/4 bg-white w-full flex flex-col hidden  dark:bg-neutral-800 lg:flex lg:relative lg:flex-row lg:!transform-none lg:!translate-none lg:gap-5 lg:border-0 lg:justify-end "
+            class="rounded-2xl border border-neutral-200 py-4 px-4 left-0 absolute bottom transform translate-y-1/4 bg-white w-full flex flex-col hidden  dark:bg-neutral-800 lg:flex lg:relative lg:flex-row lg:!transform-none lg:!translate-none lg:gap-5 lg:border-0 lg:justify-end z-10 dark:border-neutral-700"
         >
             <NavItem name="Home" />
             <NavItem name="Blog" />

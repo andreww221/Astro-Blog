@@ -1,0 +1,47 @@
+---
+interface Props {
+    title: string;
+    isMain?: boolean;
+    lineDown?: boolean;
+}
+
+const { title, isMain = false, lineDown = false } = Astro.props;
+
+const Tag = isMain? "h1":"h2" ;
+
+---
+
+
+<Tag class:list={[
+    `text-4xl font-bold text-neutral-700 line relative w-fit mb-7 dark:text-white`,
+    {"lineDown":lineDown}
+
+]}>
+    {title}
+</Tag>
+
+
+<style is:inline>
+
+    h1.line::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        left: 0px;
+        bottom: -2px;
+        z-index: -2;
+        background-color: #93cefc;
+    }
+
+    .lineDown::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        right: -40px;
+        bottom: -2px;
+        z-index: -2;
+        background-color: #93cefc;
+    }
+</style>

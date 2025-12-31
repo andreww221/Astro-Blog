@@ -1,0 +1,15 @@
+---
+
+const {name,border} = Astro.props;
+---
+
+<li class:list={[
+    `border-b border-neutral-200 dark:text-neutral-400 dark:border-neutral-700  lg:dark:border-transparent  lg:pb-0 lg:mb-0  lg:border-transparent lg:border-b-4  hover:lg:border-blue-300 lg:hover:transition-all lg:hover:duration-300`,{
+        "mb-2":!border,
+        "pb-2":!border,
+        "border-none":border,
+        "mb-0":border
+    }
+]}>
+    <a class="text-neutral-900 dark:text-white " href="/home">{name}</a>
+</li>

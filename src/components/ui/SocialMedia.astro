@@ -27,7 +27,8 @@ const {notStyleItems} = Astro.props;
             <li>
                 <a
                     class:list={[
-                        `bg-white w-10 h-10 rounded-2xl  flex items-center justify-center border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-200 hover:transition-all hover:duration-300`,
+                        `bg-white w-10 h-10 rounded-2xl  flex items-center justify-center border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-200 hover:transition-all hover:duration-300 dark:hover:bg-transparent `,
+
                         {
                             "bg-transparent!":notStyleItems,
                             "border-none!":notStyleItems,
@@ -42,7 +43,7 @@ const {notStyleItems} = Astro.props;
                     aria-label={`Open ${social.name} from Paulina`}
                     title={`Open ${social.name} from Paulina`}
                 >
-                    <Icon  name={social.nameIcon}  />
+                    <Icon style="color: currentColor"  name={social.nameIcon}  />
                 </a>
             </li>
         ))

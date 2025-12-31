@@ -7,6 +7,19 @@ import MenuButton from "@components/layout/header/MenuButton.astro";
 import ModeButton from "@components/layout/header/ModeButton.astro";
 
 
+const itemsNav = [
+    {"name":"Home","link":"/","border":"true"},
+    {"name":"Blog","link":"/blog","border":"true"},
+    {"name":"About","link":"/about","border":"true"},
+    {"name":"Newsletter","link":"/newsletter","border":"false"}
+];
+
+
+
+const pathName = Astro.url.pathname;
+
+
+
 ---
 
 <header
@@ -25,16 +38,15 @@ import ModeButton from "@components/layout/header/ModeButton.astro";
             id="menu"
             class="rounded-2xl border border-neutral-200 py-4 px-4 left-0 absolute bottom transform translate-y-1/4 bg-white w-full flex flex-col hidden  dark:bg-neutral-800 lg:flex lg:relative lg:flex-row lg:!transform-none lg:!translate-none lg:gap-5 lg:border-0 lg:justify-end z-10 dark:border-neutral-700"
         >
-            <NavItem name="Home" />
-            <NavItem name="Blog" />
-            <NavItem name="About" />
-            <NavItem name="Newsletter" border="false" />
+        {
+            itemsNav.map((item)=>(<NavItem name={item.name} link={item.link} active={pathName===item.link} />))
+        
+        }
         </ul>
     </nav>
     <div class="flex flex-row gap-4">
         <MenuButton />
         <ModeButton />
-
     </div>
 </header>
 

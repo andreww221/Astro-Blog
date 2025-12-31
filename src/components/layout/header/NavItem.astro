@@ -1,15 +1,52 @@
 ---
+interface Props {
+    name: string;
+    link: string;
+    border?: boolean;
+    active?: boolean;
+}
 
-const {name,border} = Astro.props;
+const { name, link, border, active } = Astro.props;
 ---
 
-<li class:list={[
-    `border-b border-neutral-200 dark:text-neutral-400 dark:border-neutral-700  lg:dark:border-transparent  lg:pb-0 lg:mb-0  lg:border-transparent lg:border-b-4  hover:lg:border-blue-300 lg:hover:transition-all lg:hover:duration-300`,{
-        "mb-2":!border,
-        "pb-2":!border,
-        "border-none":border,
-        "mb-0":border
-    }
-]}>
-    <a class="text-neutral-900 dark:text-white " href="/home">{name}</a>
+<li
+    class:list={[
+        `border-b border-neutral-200 dark:text-neutral-400 dark:border-neutral-700  lg:dark:border-transparent  lg:pb-0 lg:mb-0  lg:border-transparent lg:border-b-4 `,
+        {
+            "mb-2": !border,
+            "pb-2": !border,
+            "border-none": border,
+        },
+    ]}
+>
+    <a
+        class:list={[`text-neutral-900 dark:text-white  relative`]}
+        href={`${link}`}
+        >{name}
+
+        {
+            active && (
+                <div
+                    transition:name="animation-link"
+                    class:list={[`w-full h-1 bg-blue-300`]}
+                />
+            )
+        }
+        {
+            !active && (
+                <div
+                    class:list={[`w-full h-1 bg-transparent`]}
+                />
+            )
+        }
+    </a>
 </li>
+
+
+<style is:inline>
+    li a:hover div{
+        background-color: #93CEFC;
+        transition: all ease 0.3s;
+    }
+
+</style>

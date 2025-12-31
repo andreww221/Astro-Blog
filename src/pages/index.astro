@@ -1,108 +1,82 @@
 ---
-import Header from "@components/layout/header/Header.astro";
 import Title from "@components/ui/Title.astro";
 import SocialMedia from "@components/ui/SocialMedia.astro";
 import Hr from "@components/ui/Hr.astro";
 import Post from "@components/blog/Post.astro";
-
-import "../styles/global.css";
+import MainLayout from "@layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body
-		class="container mx-auto p-4 bg-neutral-100 max-[991px]:max-w-3xl xl:max-w-3xl dark:bg-neutral-900 pb-0"
-	>
-		<Header />
-
-		<div
-			class="m-2 border border-neutral-200 border-t-0 -mt-3 pt-8 px-4 dark:border-neutral-700 border-b-0 mb-0"
-		>
-			<Hr />
-			<section class="pt-8">
-				<Title title="Hi, I’m Paulina 👋" isMain={true} />
-				<div class="sec-p mb-6">
-					<p class="dark:text-neutral-400 text-neutral-600">
-						I’m on a journey to become a front-end web developer. I
-						love building little projects, trying out new coding
-						techniques, and sharing what I learn along the way. When
-						I’m not at my desk, you’ll find me reading, hiking
-						through the mountains, or challenging myself on
-						rock-climbing walls.
-					</p>
-					<p class="dark:text-neutral-400 text-neutral-600">
-						I started this blog to document my progress, keep myself
-						accountable, and hopefully inspire anyone else who’s
-						learning to code. Welcome to my corner of the internet,
-						and thanks for stopping by!
-					</p>
-				</div>
-			</section>
-			<SocialMedia />
-			<main class="mt-8">
-				<Hr />
-				<div class="pt-8">
-					<Title title="Latest Articles" lineDown={true} />
-					<ul class="flex flex-col gap-6 mb-8">
-						<li>
-							<Post
-								title="Balancing Hobbies and Coding: How Hiking and Rock Climbing Help Me Stay Motivated"
-								link="https://www.google.com"
-								date="February 18, 2025"
-							/>
-						</li>
-						<li>
-							<Post
-								title="Reading for Inspiration: 5 Books That Shaped My Coding Journey"
-								link="https://www.google.com"
-								date="February 15, 2025"
-							/>
-						</li>
-						<li>
-							<Post
-								title="Overcoming Imposter Syndrome as a New Developer"
-								link="https://www.google.com"
-								date="February 10, 2025"
-							/>
-						</li>
-						<li>
-							<Post
-								title="Exploring the World of Responsive Design"
-								link="https://www.google.com"
-								date="February 4, 2025"
-							/>
-						</li>
-						<li>
-							<Post
-								title="My Favorite Dev Tools for Productivity"
-								link="https://www.google.com"
-								date="January 29, 2025"
-							/>
-						</li>
-					</ul>
-					<a
-						href="/articles"
-						class="text-neutral-700 text-lg lineDown-a relative hover:text-neutral-600 hover:transition-all hover:duration-300 dark:text-white"
-					>
-						View all articles
-					</a>
-				</div>
-			</main>
-			<footer>
-				<Hr />
-				<div class="flex flex-row items-center py-4 justify-between">
-					<span class="text-neutral-700 dark:text-neutral-400">
-						Made with ❤️ and ☕️
-					</span>
-					<SocialMedia notStyleItems={true} />
-				</div>
-			</footer>
+<MainLayout
+	title="Home | Blog's Paulina front-end web Developer"
+	description="Articles, projects, and learnings about front-end development, web design, and the real journey of building digital products."
+>
+	<Hr />
+	<section class="pt-8">
+		<Title title="Hi, I’m Paulina 👋" isMain={true} />
+		<div class="sec-p mb-6">
+			<p class="dark:text-neutral-400 text-neutral-600">
+				I’m on a journey to become a front-end web developer. I love
+				building little projects, trying out new coding techniques, and
+				sharing what I learn along the way. When I’m not at my desk,
+				you’ll find me reading, hiking through the mountains, or
+				challenging myself on rock-climbing walls.
+			</p>
+			<p class="dark:text-neutral-400 text-neutral-600">
+				I started this blog to document my progress, keep myself
+				accountable, and hopefully inspire anyone else who’s learning to
+				code. Welcome to my corner of the internet, and thanks for
+				stopping by!
+			</p>
 		</div>
-	</body>
-</html>
+		<SocialMedia />
+	</section>
+	<main class="mt-8">
+		<Hr />
+		<div class="pt-8">
+			<Title title="Latest Articles" lineDown={true} />
+			<ul class="flex flex-col gap-6 mb-8">
+				<li>
+					<Post
+						title="Balancing Hobbies and Coding: How Hiking and Rock Climbing Help Me Stay Motivated"
+						link="https://www.google.com"
+						date="February 18, 2025"
+					/>
+				</li>
+				<li>
+					<Post
+						title="Reading for Inspiration: 5 Books That Shaped My Coding Journey"
+						link="https://www.google.com"
+						date="February 15, 2025"
+					/>
+				</li>
+				<li>
+					<Post
+						title="Overcoming Imposter Syndrome as a New Developer"
+						link="https://www.google.com"
+						date="February 10, 2025"
+					/>
+				</li>
+				<li>
+					<Post
+						title="Exploring the World of Responsive Design"
+						link="https://www.google.com"
+						date="February 4, 2025"
+					/>
+				</li>
+				<li>
+					<Post
+						title="My Favorite Dev Tools for Productivity"
+						link="https://www.google.com"
+						date="January 29, 2025"
+					/>
+				</li>
+			</ul>
+			<a
+				href="/articles"
+				class="text-neutral-700 text-lg lineDown-a relative hover:text-neutral-600 hover:transition-all hover:duration-300 dark:text-white"
+			>
+				View all articles
+			</a>
+		</div>
+	</main>
+</MainLayout>

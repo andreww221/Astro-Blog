@@ -48,6 +48,19 @@ body {
   fill: white !important;
 }
 
+.dark footer a svg path,
+.dark footer a svg use{
+   opacity: 0.5;
+}
+
+
+.dark footer a:hover svg path,
+.dark footer a:hover svg use{
+   opacity: 1;
+    transition: all ease 0.3s;
+}
+
+
 
 p {
   font-size: 1.2rem;
@@ -74,8 +87,7 @@ p {
 
 footer a:hover svg path,
 footer a:hover svg use{
-    stroke:#C0BFBF !important;
-    fill: #C0BFBF !important;
+   opacity: 0.5;
     transition: all ease 0.3s;
 }
 

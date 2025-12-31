@@ -5,7 +5,8 @@
   "compilerOptions": {
     "baseUrl": ".", // root of your "paths" below. Required if "paths" is defined
     "paths": {
-      "@components/*": ["src/components/*"] // enables us to use @components/MyComponent
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"] 
     }
   }
 }

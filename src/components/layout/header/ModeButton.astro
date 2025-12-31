@@ -11,40 +11,42 @@ import { Icon } from "astro-icon/components";
 </button>
 
 <script is:inline>
-    const buttonToggleMode = document.getElementById("buttonToggleMode");
-    const iconMoon = document.getElementById("iconMoon");
-    const iconSun = document.getElementById("iconSun");
-    const root = document.documentElement;
-    const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-    ).matches;
+    const modeDarkLight = () => {
+        const buttonToggleMode = document.getElementById("buttonToggleMode");
+        const iconMoon = document.getElementById("iconMoon");
+        const iconSun = document.getElementById("iconSun");
+        const root = document.documentElement;
+        const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+        ).matches;
 
-    const setIcons = (isDark) => {
-        iconMoon.classList.toggle("hidden", isDark);
-        iconSun.classList.toggle("hidden", !isDark);
+        const setIcons = (isDark) => {
+            iconMoon.classList.toggle("hidden", isDark);
+            iconSun.classList.toggle("hidden", !isDark);
+        };
+
+        const applyTheme = (theme) => {
+            root.classList.toggle("dark", theme === "dark");
+            setIcons(theme === "dark");
+            localStorage.setItem("theme", theme);
+        };
+
+        const initTheme = () => {
+            const saved = localStorage.getItem("theme");
+            if (saved) {
+                applyTheme(saved);
+            } else {
+                applyTheme(prefersDark ? "dark" : "light");
+            }
+        };
+
+        initTheme();
+
+        buttonToggleMode.addEventListener("click", () => {
+            const isDark = root.classList.contains("dark");
+            applyTheme(isDark ? "light" : "dark");
+        });
     };
-
-    const applyTheme = (theme) => {
-        root.classList.toggle("dark", theme === "dark");
-        setIcons(theme === "dark");
-        localStorage.setItem("theme", theme);
-    };
-
-    const initTheme = () => {
-        const saved = localStorage.getItem("theme");
-        if (saved) {
-            applyTheme(saved);
-        } else {
-            applyTheme(prefersDark ? "dark" : "light");
-        }
-    };
-
-    initTheme();
-
-    buttonToggleMode.addEventListener("click", () => {
-        const isDark = root.classList.contains("dark");
-        applyTheme(isDark ? "light" : "dark");
-    });
-
-    
+    modeDarkLight();
+    document.addEventListener("astro:page-load",modeDarkLight);
 </script>

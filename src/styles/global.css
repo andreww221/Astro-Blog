@@ -1,5 +1,8 @@
+
 @import "tailwindcss";
 
+
+/* MODE DARK/LIGHT */
 
 @theme {
   --background: white;
@@ -9,19 +12,44 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 
+.dark .show-button {
+  @apply bg-white transition-all duration-300;
+}
+
+.dark .show-button svg path {
+  @apply stroke-black!;
+}
+
+.dark svg path {
+  @apply bg-white!;
+}
+
+.dark .social-media svg path {
+  @apply fill-white!;
+}
+
+.dark footer a svg path,
+.dark footer a svg use {
+  @apply opacity-[0.8];
+}
+
+
+.dark footer a:hover svg path,
+.dark footer a:hover svg use {
+  @apply opacity-[1] transition-all duration-300;
+}
+
+
+
+
 @font-face {
   font-family: "DM_Sans";
   src: url('/public/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format("woff2");
-
-
 }
 
 @font-face {
   font-family: "Fira_Code";
   src: url('/public/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
 
 
@@ -29,76 +57,59 @@ body {
   font-family: "DM_Sans", sans-serif;
 }
 
-
-.dark .show-button {
-  background-color: white;
-  transition: all ease 0.4s;
+li, p {
+  @apply  dark:text-neutral-400 text-neutral-600 text-lg;
 }
 
-.dark .show-button svg path {
-  stroke: black !important;
+section div ul{
+  @apply list-disc pl-5;
 }
 
-.dark svg path {
-  stroke: white !important;
+section div ul, section div ol{
+  @apply flex flex-col gap-1;
 }
 
-.dark .social-media svg path {
-  stroke: white !important;
-  fill: white !important;
+a:focus,
+button:focus {
+  @apply outline-2  outline-current  text-blue-400;
 }
 
-.dark footer a svg path,
-.dark footer a svg use{
-   opacity: 0.5;
-}
-
-
-.dark footer a:hover svg path,
-.dark footer a:hover svg use{
-   opacity: 1;
-    transition: all ease 0.3s;
-}
-
-
-
-p {
-  font-size: 1.2rem;
-}
-
-.sec-p {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-
-.lineDown-a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  left: 0px;
-  bottom: -3px;
-  z-index: -2;
-  background-color: #93cefc;
+a:focus {
+  @apply rounded-2xl p-0.5;
 }
 
 
 footer a:hover svg path,
-footer a:hover svg use{
-   opacity: 0.5;
-    transition: all ease 0.3s;
-}
-
-
-a:focus,
-button:focus{
-  outline: #5792C0 auto 2px !important;
+footer a:hover svg use {
+  @apply opacity-[0.5] transition-all duration-300;
 
 }
 
-a:focus{
-  border-radius: 15px;
-  padding:2px;
+.lineDown-a::after {
+  content: "";
+  @apply absolute w-100 h-1.25 left-0 -bottom-0.75 -z-10 bg-blue-400; 
 }
+
+
+
+.form-succes #message-succes{
+  @apply flex! transition-all duration-300;
+}
+
+.form-succes #email{
+  @apply border-green-600 visible!;
+}
+
+
+.form-error #message-error{
+  @apply flex! transition-all duration-300;
+}
+.form-error #email{
+  @apply border-red-600 visible!;
+}
+
+
+
+
+
+

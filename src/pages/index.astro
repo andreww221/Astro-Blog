@@ -1,9 +1,11 @@
 ---
+
 import Title from "@components/ui/Title.astro";
 import SocialMedia from "@components/ui/SocialMedia.astro";
 import Hr from "@components/ui/Hr.astro";
 import Post from "@components/blog/Post.astro";
 import MainLayout from "@layouts/MainLayout.astro";
+
 ---
 
 <MainLayout
@@ -13,15 +15,15 @@ import MainLayout from "@layouts/MainLayout.astro";
 	<Hr />
 	<section class="pt-8">
 		<Title title="Hi, I’m Paulina 👋" isMain={true} />
-		<div class="sec-p mb-6">
-			<p class="dark:text-neutral-400 text-neutral-600">
+		<div class="flex flex-col gap-6 mb-6">
+			<p>
 				I’m on a journey to become a front-end web developer. I love
 				building little projects, trying out new coding techniques, and
 				sharing what I learn along the way. When I’m not at my desk,
 				you’ll find me reading, hiking through the mountains, or
 				challenging myself on rock-climbing walls.
 			</p>
-			<p class="dark:text-neutral-400 text-neutral-600">
+			<p>
 				I started this blog to document my progress, keep myself
 				accountable, and hopefully inspire anyone else who’s learning to
 				code. Welcome to my corner of the internet, and thanks for

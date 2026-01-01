@@ -1,4 +1,5 @@
 ---
+
 interface Props {
     name: string;
     link: string;
@@ -7,6 +8,7 @@ interface Props {
 }
 
 const { name, link, border, active } = Astro.props;
+
 ---
 
 <li
@@ -32,21 +34,13 @@ const { name, link, border, active } = Astro.props;
                 />
             )
         }
-        {
-            !active && (
-                <div
-                    class:list={[`w-full h-1 bg-transparent`]}
-                />
-            )
-        }
+        {!active && <div class:list={[`w-full h-1 bg-transparent`]} />}
     </a>
 </li>
 
-
 <style is:inline>
-    li a:hover div{
-        background-color: #93CEFC;
+    li a:hover div {
+        background-color: #93cefc;
         transition: all ease 0.3s;
     }
-
 </style>

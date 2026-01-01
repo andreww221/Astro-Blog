@@ -1,0 +1,73 @@
+---
+
+import Title from "@components/ui/Title.astro";
+import SocialMedia from "@components/ui/SocialMedia.astro";
+import Hr from "@components/ui/Hr.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { Picture } from 'astro:assets';
+import imageWorkspace from "@assets/images/image-workspace.jpg"
+
+---
+
+<MainLayout
+    title="About Us | Paulina – Front-End Web Developer"
+    description="Learn more about Paulina, her background in front-end development, design philosophy, values, and the journey behind building meaningful digital experiences."
+>
+    <Hr />
+    <main class="pt-8">
+        <Title title="About Me" isMain={true} />
+        <div class="flex flex-col gap-6 mb-6">
+            <p>
+                I’m on a journey to become a front-end web developer. I love
+                building little projects, trying out new coding techniques, and
+                sharing what I learn along the way. When I’m not at my desk,
+                you’ll find me reading, hiking through the mountains, or
+                challenging myself on rock-climbing walls.
+            </p>
+            <p>
+                When I’m not coding, I love getting lost in a good book. My
+                taste is pretty eclectic: I’ll happily read everything from
+                fantasy novels to biographies of tech pioneers. Reading helps me
+                unwind and often sparks new ideas for my coding projects.
+            </p>
+            <p>
+                Another big passion of mine is the great outdoors. Hiking allows
+                me to disconnect from the digital world and reconnect with
+                nature. I love challenging hikes with rewarding views at the
+                top. And if I’m not on the trails, you might catch me rock
+                climbing. The combination of mental focus and physical endurance
+                is a perfect parallel to tackling tough coding challenges!
+            </p>
+            <p>Some of my favorite books:</p>
+            <ul>
+                <li>
+                    <strong>“The Pragmatic Programmer”</strong> by Andrew Hunt and
+                    David Thomas (for helpful insights into software development)
+                </li>
+                <li>
+                    <strong>“Ready Player One”</strong> by Ernest Cline (for some
+                    futuristic escapism)
+                </li>
+                <li>
+                    <strong>“The Hobbit”</strong> by J.R.R. Tolkien (for a bit of
+                    fantasy fun)
+                </li>
+                <li>
+                    <strong>“Educated”</strong> by Tara Westover (for incredible inspiration)
+                </li>
+            </ul>
+            <p>
+                I absolutely love my workspace as a place that inspires me to do
+                my best work, so I thought I’d share it with you:
+            </p>
+            <Picture class="rounded-2xl" src={imageWorkspace} formats={['webp', 'png']}   widths={[600,imageWorkspace.width]}  sizes={`(max-width: 991px) 600px, (min-width:992px) ${imageWorkspace.width} `}   alt="Minimalist home office setup with a white desk, computer monitor, plants, decorative shelves, framed artwork on the wall, and soft natural light creating a calm workspace." title="Minimalist home office setup with a white desk, computer monitor, plants, decorative shelves, framed artwork on the wall, and soft natural light creating a calm workspace." />
+            <p>
+                I hope this blog not only documents my growth but also helps
+                others see that coding can be for everyone. Thanks for joining
+                me on this journey!
+            </p>
+        </div>
+        <h4 class="text-neutral-700 font-bold text-2xl mb-4 dark:text-white">Follow me</h4>
+        <SocialMedia />
+    </main>
+</MainLayout>

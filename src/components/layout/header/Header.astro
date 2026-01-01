@@ -6,7 +6,6 @@ import MenuButton from "@components/layout/header/MenuButton.astro";
 
 import ModeButton from "@components/layout/header/ModeButton.astro";
 
-
 const itemsNav = [
     {"name":"Home","link":"/","border":"true"},
     {"name":"Blog","link":"/blog","border":"true"},
@@ -14,11 +13,7 @@ const itemsNav = [
     {"name":"Newsletter","link":"/newsletter","border":"false"}
 ];
 
-
-
 const pathName = Astro.url.pathname;
-
-
 
 ---
 
@@ -75,6 +70,6 @@ const pathName = Astro.url.pathname;
 <style is:global>
     .show-button {
         background-color: #34302d;
-        transition: all ease 0.4s;
+        transition: all ease 0.3s;
     }
 </style>

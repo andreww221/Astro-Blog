@@ -1,4 +1,5 @@
 ---
+
 import Hr from "@components/ui/Hr.astro"
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { title, link, date, description, hr } = Astro.props;
+
 ---
 
 <article>
@@ -24,7 +26,7 @@ const { title, link, date, description, hr } = Astro.props;
     </h3>
     <time class="italic text-neutral-600 dark:text-neutral-400">{date}</time>
     {description && (
-        <p class="text-neutral-600 mt-1 text-lg!">{description}</p> 
+        <p class="text-neutral-600 mt-1 text-lg! dark:text-neutral-400">{description}</p> 
     )}
         {hr && (
         <Hr smallMarginTop={true} />

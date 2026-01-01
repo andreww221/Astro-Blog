@@ -1,11 +1,15 @@
 ---
+import { boolean } from 'astro:schema';
+
 interface Props {
     title: string;
     isMain?: boolean;
     lineDown?: boolean;
+    marginBottonSmall?:boolean;
+    disabledLine?:boolean;
 }
 
-const { title, isMain = false, lineDown = false } = Astro.props;
+const { title, isMain = false, lineDown = false, marginBottonSmall } = Astro.props;
 
 const Tag = isMain? "h1":"h2" ;
 
@@ -14,7 +18,11 @@ const Tag = isMain? "h1":"h2" ;
 
 <Tag class:list={[
     `text-4xl font-bold text-neutral-700 line relative w-fit mb-7 dark:text-white`,
-    {"lineDown":lineDown}
+    {
+        "lineDown":lineDown,
+         "disabledLine":lineDown,
+        "mb-4!":marginBottonSmall
+    }
 
 ]}>
     {title}
@@ -43,5 +51,9 @@ const Tag = isMain? "h1":"h2" ;
         bottom: -2px;
         z-index: -2;
         background-color: #93cefc;
+    }
+
+    .disabledLine::after{
+        display: none;
     }
 </style>

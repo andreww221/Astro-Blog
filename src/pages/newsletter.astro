@@ -1,0 +1,73 @@
+---
+import Title from "@components/ui/Title.astro";
+import Hr from "@components/ui/Hr.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+
+export const prerender = false;
+---
+
+<MainLayout
+    title="Newsletter | Paulina – Front-End Web Developer"
+    description="Subscribe to Paulina’s newsletter for insights on front-end development, design thinking, real-world projects, and lessons learned while building digital products."
+>
+    <Hr />
+    <main class="pt-8 h-[73vh]">
+        <Title
+            title="Newsletter"
+            isMain={true}
+            lineDown={true}
+            disabledLine={true}
+        />
+        <p>
+            Want to stay updated on my latest articles, coding tutorials, and
+            personal adventures? Sign up for my newsletter! It’s a simple way to
+            keep track of new posts and occasional coding tips I discover. Just
+            drop your email in the sign-up box, and I’ll send you updates
+            whenever there’s something new to share.
+        </p>
+        <form action="#" method="post" class="mt-4" id="Form">
+            <fieldset>
+                <legend>
+                    <h5 class="text-neutral-700 font-bold text-xl dark:text-white">
+                        I’d love to have you along for the ride and also hear
+                        about your own journey!
+                    </h5>
+                </legend>
+                <div class="mt-6 flex flex-col gap-1.5">
+                    <label class="text-lg text-neutral-700 dark:text-white" for="email"
+                        >Email Address</label
+                    >
+                    <input
+                        class="bg-white border border-neutral-300 rounded-2xl p-3 hover:bg-neutral-200 hover:transition-all hover:duration-300 focus:outline-blue-400 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-800"
+                        type="text"
+                        id="email"
+                        name="email"
+                        placeholder="email@example.com"
+                    />
+                    <span class="flex flex-row items-center gap-2 hidden" id="message-succes">
+                        <Icon name="icon-success" />
+                        <span class="text-green-600">You’re subscribed! Check your inbox for updates.</span>
+                    </span>
+                    <span class="flex flex-row items-center gap-2 hidden" id="message-error">
+                        <Icon name="icon-error" />
+                       <span class="text-red-600">Please enter a valid email address.</span>
+                    </span>
+                </div>
+                <input
+                    autocomplete="address-level1"
+                    class="mt-3 block w-fit bg-blue-300 rounded-lg p-3.5 hover:bg-blue-400 hover:cursor-pointer hover:transition-all hover:duration-300 focus:outline-blue-400"
+                    type="submit"
+                    value="Stay updated"
+                />
+                <span class="text-neutral-600 mt-3 block dark:text-neutral-400"
+                    >Unsubscribe anytime. No spam, I promise 🙂</span
+                >
+            </fieldset>
+        </form>
+    </main>
+</MainLayout>
+
+<script>
+    import "src/scripts/newsletter";
+</script>

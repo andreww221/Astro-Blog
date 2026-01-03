@@ -39,7 +39,9 @@
   @apply opacity-[1] transition-all duration-300;
 }
 
-
+.dark header svg path{
+  @apply stroke-white!;
+}
 
 
 @font-face {
@@ -69,14 +71,33 @@ section div ul, section div ol{
   @apply flex flex-col gap-1;
 }
 
-a:focus,
-button:focus {
-  @apply outline-2  outline-current  text-blue-400;
+
+ a:focus,
+ button:focus{
+   @apply outline-2  outline-blue-500   invisible! lg:visible!;
 }
 
-a:focus {
-  @apply rounded-2xl p-0.5;
+header a:focus{
+ @apply rounded-sm p-0.5;
 }
+
+header a:focus div{
+  @apply hidden;
+}
+
+
+main a:focus{
+@apply rounded-xl p-0.5;
+}
+
+main a:focus::after{
+  @apply hidden;
+}
+
+main article a:focus{
+@apply rounded-2xl block p-0.5;
+}
+
 
 
 footer a:hover svg path,
@@ -87,7 +108,7 @@ footer a:hover svg use {
 
 .lineDown-a::after {
   content: "";
-  @apply absolute w-100 h-1.25 left-0 -bottom-0.75 -z-10 bg-blue-400; 
+  @apply absolute w-full h-1.25 left-0 -bottom-0.75 -z-10 bg-blue-400; 
 }
 
 

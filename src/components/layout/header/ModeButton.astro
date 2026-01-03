@@ -1,52 +1,61 @@
 ---
-
 import { Icon } from "astro-icon/components";
-
 ---
 
 <button
-    id="buttonToggleMode" class="bg-neutral-100 block h-full p-3 rounded-2xl border border-neutral-200 hover:cursor-pointer dark:bg-neutral-900 dark:border-neutral-700">
+    id="buttonToggleMode"
+    class="bg-neutral-100 block h-full p-3 rounded-2xl border border-neutral-200 hover:cursor-pointer dark:bg-neutral-900 dark:border-neutral-700"
+>
     <Icon id="iconMoon" class="w-5 h-5" name="icon-moon" />
     <Icon id="iconSun" class="w-5 h-5 hidden" name="icon-sun" />
 </button>
 
 <script is:inline>
+    const applyThemeInstant = () => {
+        const root = document.documentElement;
+        const iconMoon = document.getElementById("iconMoon");
+        const iconSun = document.getElementById("iconSun");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)",).matches;
+        if(!localStorage.getItem("theme")) localStorage.setItem("theme",prefersDark == true ? "dark": "light" );
+        const isDark = localStorage.getItem("theme") === "dark" ? "dark" : "light";
+        root.classList.toggle("dark", isDark == "dark");
+        iconMoon.classList.toggle("hidden", isDark==="dark");
+        iconSun.classList.toggle("hidden", isDark==="light");
+    };
+    applyThemeInstant();
+</script>
+
+<script>
     const modeDarkLight = () => {
+        const root = document.documentElement;
         const buttonToggleMode = document.getElementById("buttonToggleMode");
         const iconMoon = document.getElementById("iconMoon");
         const iconSun = document.getElementById("iconSun");
-        const root = document.documentElement;
-        const prefersDark = window.matchMedia(
-            "(prefers-color-scheme: dark)",
-        ).matches;
 
-        const setIcons = (isDark) => {
+        if (!buttonToggleMode || !iconMoon || !iconSun) return;
+
+        const setIcons = (isDark: any) => {
             iconMoon.classList.toggle("hidden", isDark);
             iconSun.classList.toggle("hidden", !isDark);
         };
 
-        const applyTheme = (theme) => {
-            root.classList.toggle("dark", theme === "dark");
-            setIcons(theme === "dark");
-            localStorage.setItem("theme", theme);
+        const initialTheme = () => {
+            const isDark = localStorage.getItem("theme")==="dark" ? true : false;
+            root.classList.toggle("dark",isDark);
+            setIcons(isDark);
         };
 
-        const initTheme = () => {
-            const saved = localStorage.getItem("theme");
-            if (saved) {
-                applyTheme(saved);
-            } else {
-                applyTheme(prefersDark ? "dark" : "light");
-            }
+        initialTheme();
+
+        const toggleTheme = (theme:string) => { 
+            localStorage.setItem("theme",theme);
+            initialTheme();
         };
 
-        initTheme();
-
-        buttonToggleMode.addEventListener("click", () => {
-            const isDark = root.classList.contains("dark");
-            applyTheme(isDark ? "light" : "dark");
+        buttonToggleMode.addEventListener("click", ()=>{
+            toggleTheme(localStorage.getItem("theme")==="dark" ? "light" : "dark");
         });
     };
-    modeDarkLight();
-    document.addEventListener("astro:page-load",modeDarkLight);
+
+    document.addEventListener("astro:page-load", modeDarkLight);
 </script>

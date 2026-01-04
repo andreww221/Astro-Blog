@@ -1,0 +1,130 @@
+# Comprehensive Formatting Guide for Blog Content
+
+*Published January 12, 2025*
+
+This guide shows all the possible formatting styles for blog articles. Use this guide, along with the article content in the JSON file provided in the project to format the text.
+
+---
+
+## Headings and Subheadings
+
+Headings are the backbone of your content structure. They help readers navigate the page effortlessly.
+
+
+# Heading One
+## Heading Two
+### Heading Three
+#### Heading Four
+##### Heading Five
+###### Heading Six
+
+---
+
+## Paragraphs
+
+Web design isn’t just about aesthetics; it’s about creating an inclusive and functional experience for all users. A strong foundation in HTML, CSS, and JavaScript is key to achieving this.
+
+---
+
+## Lists
+
+Lists organize content for clarity and emphasis.
+
+##### Unordered List Example:
+- Learn HTML for structure.
+- Use CSS for styling. 
+- Implement JavaScript for interactivity.
+
+##### Ordered List Example:
+
+1. Learn HTML for structure.
+2. Use CSS for styling.
+3. Implement JavaScript for interactivity.
+
+---
+
+## Emphasis
+
+Emphasize important points to draw attention.
+
+- Use **bold** text for critical details.
+- Use italic text for subtle emphasis.
+
+---
+
+##  Inline Code
+
+
+Include small code snippets directly within your text.
+
+Use the <code class="code-inline">display: flex;</code>  property to create flexible layouts.
+
+
+---
+
+
+##  Code Blocks
+
+
+For longer code snippets, use code blocks with syntax highlighting.
+
+Use the   property to create flexible layouts.
+
+```html
+<div class="container">
+  <h1>Hello, World!</h1>
+</div>
+```
+
+---
+
+
+##  Quotes
+
+
+Highlight important statements or references.
+
+
+> “The best way to learn to code is by building projects.”
+
+---
+
+
+##  Callouts
+
+
+Write important notes to add context or information to the main content.
+
+Use the  property to create flexible layouts.
+
+
+<blockquote data-callout="card" data-type="tip">
+  <div><img src="/src/icons/icon-tip.svg" alt="Tip" /> Tip: Start Small </div>
+Begin your journey with smaller projects to build confidence and gradually take on bigger challenges.
+</blockquote>
+
+<blockquote data-callout="card" data-type="warning">
+  <div><img src="/src/icons/icon-warning.svg" alt="Tip" /> Tip: Start Small </div>
+Begin your journey with smaller projects to build confidence and gradually take on bigger challenges.
+</blockquote>
+
+<blockquote data-callout="card" data-type="info">
+  <div><img src="/src/icons/icon-info.svg" alt="Tip" /> Information: Keyboard Accessibility </div>
+Ensure all interactive elements are accessible via keyboard navigation to improve inclusivity for all users.
+</blockquote>
+
+
+---
+
+##  Hyperlinks
+
+Hyperlinks connect readers to additional resources or pages.
+
+Learn more about [Frontend Mentor](https://example.com)
+
+
+---
+
+
+
+

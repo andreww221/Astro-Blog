@@ -23,6 +23,7 @@ import { Icon } from "astro-icon/components";
         iconSun.classList.toggle("hidden", isDark==="light");
     };
     applyThemeInstant();
+    document.documentElement.setAttribute("data-theme", "dark");
 </script>
 
 <script>

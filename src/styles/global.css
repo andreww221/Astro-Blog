@@ -78,55 +78,76 @@ section div ul, section div ol{
 }
 
 header a:focus{
+  
  @apply rounded-sm p-0.5;
+
 }
 
 header a:focus div{
+
   @apply hidden;
+
 }
 
 
 main a:focus{
+
 @apply rounded-xl p-0.5;
+
 }
 
 main a:focus::after{
+
   @apply hidden;
+
 }
 
 main article a:focus{
-@apply rounded-2xl block p-0.5;
-}
 
+@apply rounded-2xl block p-0.5;
+
+}
 
 
 footer a:hover svg path,
 footer a:hover svg use {
+
   @apply opacity-[0.5] transition-all duration-300;
+
 
 }
 
 .lineDown-a::after {
+
   content: "";
   @apply absolute w-full h-1.25 left-0 -bottom-0.75 -z-10 bg-blue-400; 
-}
 
+}
 
 
 .form-succes #message-succes{
+
   @apply flex! transition-all duration-300;
+
 }
 
 .form-succes #email{
+
   @apply border-green-600 visible!;
+
 }
 
 
 .form-error #message-error{
+
   @apply flex! transition-all duration-300;
+
 }
+
 .form-error #email{
+
   @apply border-red-600 visible!;
+
 }
 
 

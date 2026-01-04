@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --background: white;
+  --foreground: black;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+.singleBlog h1,
+.singleBlog h2,
+.singleBlog h3,
+.singleBlog h4,
+.singleBlog h5,
+.singleBlog h6{
+    @apply text-neutral-700  font-bold mb-3 dark:text-white;
+}
+
+
+
+.singleBlog h1{
+    @apply text-4xl;
+}
+
+
+.singleBlog h2{
+     @apply text-3xl;
+}
+
+.singleBlog h3{
+     @apply text-2xl;
+}
+
+.singleBlog h4{
+     @apply text-xl;
+}
+
+
+.singleBlog h5{
+     @apply text-lg;
+}
+
+.singleBlog h6{
+     @apply text-base;
+}
+
+.singleBlog ul, .singleBlog ol{
+    @apply mb-3;
+}
+
+.singleBlog ul, .singleBlog ol{
+    @apply list-disc pl-7;
+}
+
+.singleBlog ol{
+    @apply list-decimal;
+}
+
+
+.singleBlog p, .singleBlog blockquote{
+    @apply mb-3 text-lg dark:text-neutral-400!;
+}
+
+
+.singleBlog p em{
+    @apply text-base;
+
+}
+
+.singleBlog hr{
+    @apply w-12/12 h-0.5 border-0 bg-neutral-200 mx-auto mt-8 mb-8  dark:bg-neutral-700;
+}
+
+.singleBlog .astro-code{
+    @apply p-3  rounded-xl;
+}
+
+.singleBlog blockquote{
+    @apply border-l border-l-4 pl-3 border-gray-400;
+}
+
+
+
+.singleBlog blockquote[data-callout="card"]{
+    @apply  bg-green-200 border border-1  p-3 rounded-2xl text-neutral-600 mb-3 dark:text-neutral-400;
+}
+
+.singleBlog blockquote[data-callout="card"] div{
+    @apply flex flex-row items-center gap-2 font-bold mb-3 text-neutral-700  text-xl dark:text-white;
+}
+
+
+.singleBlog blockquote[data-type="tip"]{
+    @apply  bg-[#E9F5EA]  border-green-500 dark:bg-[#132A18];
+} 
+
+.singleBlog blockquote[data-type="warning"]{
+    @apply  bg-[#FFF5E1]  border-yellow-500 dark:bg-[#4A3003];
+}
+
+.singleBlog blockquote[data-type="info"]{
+    @apply  bg-[#E1F1FE]  border-blue-500 dark:bg-[#022B4A];
+}
+
+
+.singleBlog a{
+    @apply text-neutral-700 text-lg  relative hover:transition-all hover:duration-300 dark:text-white hover:text-blue-400;
+}
+
+
+.singleBlog a::after {
+  content: "";
+  @apply absolute w-full h-1.25 left-0 -bottom-0.75 -z-10 bg-blue-400; 
+}
+
+
+.singleBlog pre{
+    @apply bg-neutral-200!;
+    
+}
+
+html.dark pre.astro-code {
+ @apply bg-neutral-800!;
+  color: var(--shiki-dark) !important;
+}
+
+html.dark  pre.astro-code span {
+  color: var(--shiki-dark) !important;
+}
+
+ .singleBlog .code-inline{
+ @apply bg-neutral-200! p-1 rounded-xl text-base;
+}
+
+
+html.dark  .singleBlog .code-inline{
+     @apply bg-neutral-800!;
+  color: var(--shiki-dark) !important;
+
+}

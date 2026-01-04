@@ -1,6 +1,27 @@
 ---
 
+import MainLayout from "@layouts/MainLayout.astro";
+
+import { getCollection, render } from "astro:content";
+
+import "@styles/singleBlog.css";
+
+
+const Posts = await getCollection("blog");
+
+const {Content, Headings} = await render(Posts[0]);
+
+
+
 ---
 
+<MainLayout
+	title="Home | Blog's Paulina front-end web Developer"
+	description="Articles, projects, and learnings about front-end development, web design, and the real journey of building digital products."
+>
+	<main class="mt-8 singleBlog">
 
-<h1>hola</h1>
+        <Content />
+
+	</main>
+</MainLayout>

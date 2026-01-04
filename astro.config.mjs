@@ -12,7 +12,15 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  output:"static",
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: "github-light",
+        dark: "github-dark",
+      },
+    },
+  },
+  output: "static",
   integrations: [icon()],
   adapter: netlify()
 });

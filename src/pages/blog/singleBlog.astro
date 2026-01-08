@@ -9,7 +9,8 @@ import "@styles/singleBlog.css";
 
 const Posts = await getCollection("blog");
 
-const {Content, Headings} = await render(Posts[0]);
+const {Content, Heading} = await render(Posts[6]);
+
 
 
 
@@ -19,6 +20,7 @@ const {Content, Headings} = await render(Posts[0]);
 	title="Home | Blog's Paulina front-end web Developer"
 	description="Articles, projects, and learnings about front-end development, web design, and the real journey of building digital products."
 >
+
 	<main class="mt-8 singleBlog">
 
         <Content />

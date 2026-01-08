@@ -71,6 +71,12 @@ section div ul, section div ol{
   @apply flex flex-col gap-1;
 }
 
+.h-screen-body{
+  @apply h-screen ;
+}
+
+
+
 
  a:focus,
  button:focus{

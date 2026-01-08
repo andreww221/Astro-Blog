@@ -58,6 +58,9 @@
     @apply list-decimal;
 }
 
+.singleBlog pre, .singleBlog img{
+    @apply mb-3;
+}
 
 .singleBlog p, .singleBlog blockquote{
     @apply mb-3 text-lg dark:text-neutral-400!;
@@ -89,6 +92,11 @@
 
 .singleBlog blockquote[data-callout="card"] div{
     @apply flex flex-row items-center gap-2 font-bold mb-3 text-neutral-700  text-xl dark:text-white;
+}
+
+.singleBlog blockquote[data-callout="card"] img{
+    @apply w-fit mb-0 max-w-full;
+
 }
 
 
@@ -140,3 +148,73 @@ html.dark  .singleBlog .code-inline{
   color: var(--shiki-dark) !important;
 
 }
+
+ .singleBlog  img{
+    @apply w-full max-w-full rounded-lg;
+ }
+
+
+
+.singleBlog td,
+.singleBlog th{
+ @apply border border-2 border-neutral-200 ;
+
+}
+
+
+
+.singleBlog td{
+    @apply text-neutral-700 dark:text-neutral-400;
+}
+
+.singleBlog th{
+    @apply text-neutral-700 text-left dark:text-white;
+}
+
+
+.singleBlog th,
+.singleBlog td{
+    @apply px-3 py-1.5;
+}
+
+
+.singleBlog table{
+    @apply w-full relative;
+}
+
+.singleBlog .table-wrapper{
+    @apply w-full max-w-full overflow-x-auto;
+}
+
+.singleBlog table::after{
+    content: "";
+    @apply absolute w-full h-full top-0 left-0 right-0 bottom-0 rounded-2xl border border-2 border-neutral-200;
+}
+
+.singleBlog table thead tr:first-child th:first-child {
+    @apply border-0;
+}
+
+.singleBlog table thead tr:first-child th{
+    @apply border-t-0;
+}
+
+
+.singleBlog table thead tr td:first-child,
+.singleBlog table tbody tr td:first-child{
+    @apply border-l-0;
+}
+
+.singleBlog table tbody tr td:last-child,
+.singleBlog table thead tr td:last-child{
+  @apply border-r-0;
+}
+
+.singleBlog table thead tr:first-child th:last-child,
+.singleBlog table tbody tr:last-child td:first-child,
+.singleBlog table tbody tr:last-child td:last-child  {
+    @apply border-0;
+}
+
+
+

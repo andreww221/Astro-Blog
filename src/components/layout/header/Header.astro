@@ -1,5 +1,4 @@
 ---
-
 import NavItem from "@components/layout/header/NavItem.astro";
 
 import MenuButton from "@components/layout/header/MenuButton.astro";
@@ -7,36 +6,42 @@ import MenuButton from "@components/layout/header/MenuButton.astro";
 import ModeButton from "@components/layout/header/ModeButton.astro";
 
 const itemsNav = [
-    {"name":"Home","link":"/","border":"true"},
-    {"name":"Blog","link":"/blog","border":"true"},
-    {"name":"About","link":"/about","border":"true"},
-    {"name":"Newsletter","link":"/newsletter","border":"false"}
+    { name: "Home", link: "/", border: "true" },
+    { name: "Blog", link: "/blog", border: "true" },
+    { name: "About", link: "/about", border: "true" },
+    { name: "Newsletter", link: "/newsletter", border: "false" },
 ];
 
 const pathName = Astro.url.pathname;
-
 ---
 
 <header
     class="relative gap-1.5 flex flex-row justify-between bg-white p-2 rounded-2xl items-center border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700"
 >
     <div>
-        <img
-            src="/src/assets/images/paulina.jpg"
-            alt="Paulina"
-            title="Paulina"
-            class="rounded-2xl w-10"
-        />
+        <a href="/">
+            <img
+                src="/src/assets/images/paulina.jpg"
+                alt="Paulina"
+                title="Paulina"
+                class="rounded-2xl w-10"
+            />
+        </a>
     </div>
-    <nav class="lg:w-full ">
+    <nav class="lg:w-full">
         <ul
             id="menu"
-            class="rounded-2xl border border-neutral-200 py-4 px-4 left-0 absolute bottom transform translate-y-1/4 bg-white w-full flex flex-col hidden  dark:bg-neutral-800 lg:flex lg:relative lg:flex-row lg:!transform-none lg:!translate-none lg:gap-5 lg:border-0 lg:justify-end z-10 dark:border-neutral-700"
+            class="rounded-2xl border border-neutral-200 py-4 px-4 left-0 absolute bottom transform translate-y-1/4 bg-white w-full flex flex-col hidden dark:bg-neutral-800 lg:flex lg:relative lg:flex-row lg:!transform-none lg:!translate-none lg:gap-5 lg:border-0 lg:justify-end z-10 dark:border-neutral-700"
         >
-        {
-            itemsNav.map((item)=>(<NavItem name={item.name} link={item.link} active={pathName===item.link} />))
-        
-        }
+            {
+                itemsNav.map((item) => (
+                    <NavItem
+                        name={item.name}
+                        link={item.link}
+                        active={pathName === item.link}
+                    />
+                ))
+            }
         </ul>
     </nav>
     <div class="flex flex-row gap-4">
@@ -46,7 +51,6 @@ const pathName = Astro.url.pathname;
 </header>
 
 <script type="module">
-    
     import gsap from "https://cdn.skypack.dev/gsap";
 
     const buttonShowMenu = document.getElementById("buttonShowMenu");
@@ -64,7 +68,6 @@ const pathName = Astro.url.pathname;
             opacity: 0,
         });
     });
-
 </script>
 
 <style is:global>

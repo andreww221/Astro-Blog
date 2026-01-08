@@ -72,42 +72,42 @@ import { Icon } from "astro-icon/components";
                     value="Stay updated"
                 />
                 <span class="text-neutral-600 mt-3 block dark:text-neutral-400"
-                    >Unsubscribe anytime. No spam, I promise 🙂</span
+                    >Unsubscribe anytime. No spam, I promise &#128578;</span
                 >
             </fieldset>
         </form>
     </main>
 </MainLayout>
 
+
 <script>
-document.addEventListener("astro:page-load", () => {
+    document.addEventListener("astro:page-load", () => {
+        const form = document.getElementById("Form");
 
-    const form = document.getElementById("Form");
-
-    function validateEmail(email: string) {
-        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return regex.test(email);
-    }
-
-    form?.addEventListener("submit", (event) => {
-
-        event.preventDefault();
-
-        const formData = new FormData(form);
-
-        if (formData) {
-
-            let email = formData.get("email");
-
-            if (typeof email !== "string") {form.classList.add("form-error"); return};
-
-            let isValidEmail = validateEmail(email);
-
-            form.classList.toggle("form-succes", isValidEmail);
-
-            form.classList.toggle("form-error", !isValidEmail);
-
+        function validateEmail(email: string) {
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return regex.test(email);
         }
-    })
-});
+
+        form?.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            if (formData) {
+                let email = formData.get("email");
+
+                if (typeof email !== "string") {
+                    form.classList.add("form-error");
+                    return;
+                }
+
+                let isValidEmail = validateEmail(email);
+
+                form.classList.toggle("form-succes", isValidEmail);
+
+                form.classList.toggle("form-error", !isValidEmail);
+            }
+        });
+    });
 </script>

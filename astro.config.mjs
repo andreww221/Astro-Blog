@@ -7,6 +7,8 @@ import icon from 'astro-icon';
 
 import netlify from '@astrojs/netlify';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -21,6 +23,6 @@ export default defineConfig({
     },
   },
   output: "static",
-  integrations: [icon()],
+  integrations: [icon(), mdx()],
   adapter: netlify()
 });

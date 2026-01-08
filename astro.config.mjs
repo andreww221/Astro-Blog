@@ -5,12 +5,13 @@ import tailwindcss from '@tailwindcss/vite';
 
 import icon from 'astro-icon';
 
-import netlify from '@astrojs/netlify';
 
 import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://andreww221.github.io',
+  base: '/Astro-Blog',
   vite: {
     plugins: [tailwindcss()]
   },
@@ -24,5 +25,4 @@ export default defineConfig({
   },
   output: "static",
   integrations: [icon(), mdx()],
-  adapter: netlify()
 });

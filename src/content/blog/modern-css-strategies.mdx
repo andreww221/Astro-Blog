@@ -1,52 +1,109 @@
 ---
-title: "Modern CSS Strategies"
+title: "Modern CSS Strategies: Building Scalable Layouts Without Overengineering"
 description: "Scalable and maintainable approaches to modern CSS."
 pubDate: 2025-01-22
 slug: "modern-css-strategies"
-image: "modern-css.jpg"
 ---
 
-# Modern CSS Strategies
+import Image from "@assets/images/posts/modern-css.jpg";
 
-*Published January 22, 2025*
+import { Icon } from "astro-icon/components";
+import { Picture} from 'astro:assets';
 
-Modern CSS allows developers to build complex layouts with less code and fewer hacks.
+# Modern CSS Strategies:
+Building Scalable Layouts Without Overengineering
 
----
+*Published 2025-01-22*
 
-## Layout Systems
+Scalable and maintainable approaches to modern CSS. This article explores the topic in depth, focusing on real-world frontend development decisions and long-term tradeoffs.
 
-Flexbox and Grid solve most layout problems.
-
-```css
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-```
+> “Good software is rarely accidental; it is designed intentionally.”
 
 ---
 
-## Utility-First CSS
+## Context and Motivation
 
-Utility classes reduce context switching and encourage consistency.
+Modern web development requires clarity, performance, and maintainability from day one.
+
+For additional context, see:
+[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
 
 <blockquote data-callout="card" data-type="info">
-  <div><img src="/src/icons/icon-info.svg" alt="Info" /> Information</div>
-Utility-first CSS works best with a defined design system.
+  <div><Icon  name="icon-info" />  Information</div>
+Static-first thinking reduces complexity and improves predictability.
 </blockquote>
 
 ---
 
+## Practical Example
+
+```js
+export function example() {
+  console.log("Example related to modern-css-strategies");
+}
+```
+
+<blockquote data-callout="card" data-type="tip">
+  <div><Icon  name="icon-tip" />  Tip</div>
+Always measure before optimizing or refactoring.
+</blockquote>
+
+---
+
+## Common Pitfalls
+
+- Over-engineering
+- Ignoring fundamentals
+- Skipping documentation
+
+<blockquote data-callout="card" data-type="warning">
+  <div><Icon  name="icon-warning" /> Warning</div>
+Small shortcuts often become long-term technical debt.
+</blockquote>
+
+---
+
+## Comparison Table
+
+<div class="table-wrapper">
+
+| Approach | Pros | Cons |
+|--------|------|------|
+| Simple | Easy to maintain | Limited flexibility |
+| Modular | Scalable | Requires discipline |
+| Complex | Powerful | High maintenance cost |
+
+</div>
+
+---
+
 ## Image Prompt
-Modern responsive layout using CSS Grid and Flexbox.
+CSS Grid and Flexbox layout diagrams.
 
-![Modern CSS](/src/assets/images/posts/modern-css.jpg)
+<Picture
+  class="rounded-2xl"
+  src={Image}
+  formats={['webp','png']}
+  widths={[600, Image.width]}
+  sizes={`(max-width: 991px) 600px, (min-width: 992px) ${Image.width}`}
+  alt="Modern CSS Strategies illustration"
+  title="Modern CSS Strategies illustration"
+/>
 
-*Caption: Modern CSS simplifies responsive layouts.*
+*Caption: Visual context for Modern CSS Strategies.*
+
+---
+
+## Long-Term Perspective
+
+> Decisions compound over time; clarity today saves effort tomorrow.
+
+- Clear abstractions
+- Explicit tradeoffs
+- Continuous learning
 
 ---
 
 ## Conclusion
 
-Modern CSS encourages clarity, flexibility, and long-term maintainability.
+Modern CSS Strategies is not a one-time task. It is an ongoing discipline that improves through experience and reflection.

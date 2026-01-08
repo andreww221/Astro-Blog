@@ -1,0 +1,50 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection, render } from "astro:content";
+import Post from "@components/blog/Post.astro";
+import Hr from "@components/ui/Hr.astro";
+import type { CollectionEntry } from "astro:content";
+import Title from "@components/ui/Title.astro";
+import "@styles/singleBlog.css";
+import PaginationItems from "@components/blog/PaginationItems.astro";
+
+interface Props {
+	post: CollectionEntry<"blog">;
+}
+
+export async function getStaticPaths({ paginate }) {
+	const post = await getCollection("blog");
+
+	return paginate(post, { pageSize: 5 });
+}
+
+const { page } = Astro.props;
+---
+
+<MainLayout
+	title="My Articles | Blog's Paulina front-end web Developer"
+	description="A collection of posts exploring front-end development, web design, personal projects, and practical insights from building real digital products."
+>
+	<main>
+		<div class="pt-8">
+			<div>
+				<Title title="Latest Articles" lineDown={true} />
+				<p>
+					Below are all my recent blog posts. Click on any title to
+					read the full article.
+				</p>
+			</div>
+			<Hr />
+			<ul class="flex flex-col pt-8 gap-6 mb-6">
+				{
+					page.data.map((post) => (
+						<li>
+							<Post post={post} showDescription={false} />
+						</li>
+					))
+				}
+			</ul>
+			<PaginationItems currentPage={page.currentPage} prevUrl={page.url.prev=="/Astro-Blog/blog/1"?"/Astro-Blog/blog/":page.url.prev} nextUrl={page.url.next} />
+		</div>
+	</main>
+</MainLayout>

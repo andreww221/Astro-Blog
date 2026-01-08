@@ -115,6 +115,8 @@
 
 .singleBlog a{
     @apply text-neutral-700 text-lg  relative hover:transition-all hover:duration-300 dark:text-white hover:text-blue-400;
+    text-wrap: auto;
+    word-break: break-all;
 }
 
 

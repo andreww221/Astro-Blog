@@ -1,60 +1,109 @@
 ---
-
-title: "Performance as a Feature"
+title: "Performance as a Feature: Why Speed Is a Product Decision, Not an Optimization"
 description: "Why performance should be treated as a core feature."
 pubDate: 2025-01-21
 slug: "performance-as-a-feature"
-image: "performance-feature.jpg"
+---
+
+import Image from "@assets/images/posts/performance-feature.jpg";
+
+import { Icon } from "astro-icon/components";
+import { Picture} from 'astro:assets';
+
+# Performance as a Feature:
+Why Speed Is a Product Decision, Not an Optimization
+
+*Published 2025-01-21*
+
+Why performance should be treated as a core feature. This article explores the topic in depth, focusing on real-world frontend development decisions and long-term tradeoffs.
+
+> “Good software is rarely accidental; it is designed intentionally.”
 
 ---
 
-import { Picture } from 'astro:assets';
+## Context and Motivation
 
-import  imageBlog from '/src/assets/images/posts/performance-feature.jpg';
+Modern web development requires clarity, performance, and maintainability from day one.
 
+For additional context, see:
+[https://web.dev/performance/](https://web.dev/performance/)
 
-
-# Performance as a Feature
-
-*Published January 21, 2025*
-
-Performance is not an optimization step; it is a product feature.
-
-> “Users feel performance before they understand features.”
+<blockquote data-callout="card" data-type="info">
+  <div><Icon  name="icon-info" />  Information</div>
+Static-first thinking reduces complexity and improves predictability.
+</blockquote>
 
 ---
 
-## Why Performance Matters
-
-Performance impacts trust, accessibility, and retention.
-
-- Faster sites feel more reliable
-- Slow interfaces increase abandonment
-- Performance affects SEO rankings
-
----
-
-## Measuring Performance
+## Practical Example
 
 ```js
-console.log("Measure before optimizing");
+export function example() {
+  console.log("Example related to performance-as-a-feature");
+}
 ```
 
-Key metrics include FCP, LCP, and CLS.
+<blockquote data-callout="card" data-type="tip">
+  <div><Icon  name="icon-tip" />  Tip</div>
+Always measure before optimizing or refactoring.
+</blockquote>
+
+---
+
+## Common Pitfalls
+
+- Over-engineering
+- Ignoring fundamentals
+- Skipping documentation
+
+<blockquote data-callout="card" data-type="warning">
+  <div><Icon  name="icon-warning" /> Warning</div>
+Small shortcuts often become long-term technical debt.
+</blockquote>
+
+---
+
+## Comparison Table
+
+<div class="table-wrapper">
+
+| Approach | Pros | Cons |
+|--------|------|------|
+| Simple | Easy to maintain | Limited flexibility |
+| Modular | Scalable | Requires discipline |
+| Complex | Powerful | High maintenance cost |
+
+</div>
 
 ---
 
 ## Image Prompt
-Website speed dashboard with performance charts and clean UI.
+Website performance dashboard with Lighthouse metrics.
 
+<Picture
+  class="rounded-2xl"
+  src={Image}
+  formats={['webp','png']}
+  widths={[600, Image.width]}
+  sizes={`(max-width: 991px) 600px, (min-width: 992px) ${Image.width}`}
+  alt="Performance as a Feature illustration"
+  title="Performance as a Feature illustration"
+/>
 
-<Picture class="rounded-2xl" src={imageBlog} formats={['webp', 'png']}   widths={[600,imageBlog.width]}  sizes={`(max-width: 991px) 600px, (min-width:992px) ${imageBlog.width} `}   alt="Minimalist home office setup with a white desk, computer monitor, plants, decorative shelves, framed artwork on the wall, and soft natural light creating a calm workspace." title="Minimalist home office setup with a white desk, computer monitor, plants, decorative shelves, framed artwork on the wall, and soft natural light creating a calm workspace." />
+*Caption: Visual context for Performance as a Feature.*
 
+---
 
-*Caption: Performance metrics guide technical decisions.*
+## Long-Term Perspective
+
+> Decisions compound over time; clarity today saves effort tomorrow.
+
+- Clear abstractions
+- Explicit tradeoffs
+- Continuous learning
 
 ---
 
 ## Conclusion
 
-Performance must be considered early and measured continuously throughout development.
+Performance as a Feature is not a one-time task. It is an ongoing discipline that improves through experience and reflection.

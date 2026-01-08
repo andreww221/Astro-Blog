@@ -1,0 +1,40 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import "@styles/singleBlog.css";
+
+interface Props {
+	post: CollectionEntry<"blog">;
+}
+
+
+export async function  getStaticPaths() {
+
+	const post = await getCollection("blog");
+
+	return post.map((post)=>({
+		params:{slug:post.slug},
+		props:{post:post}
+	}))
+
+}
+
+const { slug } = Astro.params;
+
+const { post } = Astro.props;
+
+const {Content, Heading} =  await render(post);
+
+
+---
+
+<MainLayout
+	title={`${post.data.title} | Blog's Paulina front-end web Developer`}
+	description={post.data.description}
+>
+	<main class="mt-8 singleBlog">
+		<Content />
+	</main>
+</MainLayout>
+

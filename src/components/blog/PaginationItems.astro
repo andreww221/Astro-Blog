@@ -1,0 +1,40 @@
+---
+
+
+interface Props {
+    currentPage: number;
+    prevUrl: string | null;
+    nextUrl: string | null;
+}
+
+const { currentPage = 1, prevUrl = null, nextUrl = null } = Astro.props as Props;
+
+---
+
+<div>
+    <p class="text-base text-left italic text-neutral-500">Current page: {currentPage}</p>
+    <div class="flex flex-row justify-center items-center gap-6 mb-6 mt-1">
+        <a
+            class:list={[
+                `bg-neutral-200 block h-full p-3  rounded-2xl border border-neutral-300 hover:cursor-pointer hover:bg-neutral-300 hover:transition hover:duration-300 dark:bg-neutral-900 dark:border-neutral-700 dark:text-white`,
+                {
+                     "opacity-50 pointer-events-none": !prevUrl   
+                }
+            ]}
+            href={prevUrl}
+        >
+            prev
+        </a>
+        <a
+            class:list={[
+                `bg-neutral-200 block h-full p-3 rounded-2xl border border-neutral-300 hover:cursor-pointer hover:bg-neutral-300 hover:transition hover:duration-300 dark:bg-neutral-900 dark:border-neutral-700 dark:text-white`,
+                {
+                     "opacity-50 pointer-events-none": !nextUrl   
+                }
+            ]}
+            href={nextUrl}
+        >
+            next
+        </a>
+    </div>
+</div>

@@ -43,6 +43,10 @@
   @apply stroke-white!;
 }
 
+.navActive{
+  @apply block;
+}
+
 
 @font-face {
   font-family: "DM_Sans";
@@ -78,37 +82,37 @@ section div ul, section div ol{
 
 
 
- a:focus,
- button:focus{
+ a:focus-visible,
+ button:focus-visible{
    @apply outline-2  outline-blue-500   invisible! lg:visible!;
 }
 
-header a:focus{
+header a:focus-visible{
   
  @apply rounded-sm p-0.5;
 
 }
 
-header a:focus div{
+header a:focus-visible div{
 
   @apply hidden;
 
 }
 
 
-main a:focus{
+main a:focus-visible{
 
 @apply rounded-xl p-0.5;
 
 }
 
-main a:focus::after{
+main a:focus-visible::after{
 
   @apply hidden;
 
 }
 
-main article a:focus{
+main article a:focus-visible{
 
 @apply rounded-2xl block p-0.5;
 

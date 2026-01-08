@@ -1,16 +1,15 @@
 ---
-
 import Title from "@components/ui/Title.astro";
 import SocialMedia from "@components/ui/SocialMedia.astro";
 import Hr from "@components/ui/Hr.astro";
 import Post from "@components/blog/Post.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-const posts = await getCollection("blog");
+const posts: CollectionEntry<"blog">[] = await getCollection("blog");
 
-const FirstsFivePost = posts.slice(0,5);
-
+const FirstsFivePost: CollectionEntry<"blog">[] = posts.slice(0, 5);
 ---
 
 <MainLayout
@@ -42,44 +41,16 @@ const FirstsFivePost = posts.slice(0,5);
 		<div class="pt-8">
 			<Title title="Latest Articles" lineDown={true} />
 			<ul class="flex flex-col gap-6 mb-8">
-				<li>
-					<Post
-						title="Balancing Hobbies and Coding: How Hiking and Rock Climbing Help Me Stay Motivated"
-						link="blog/singleBlog"
-						date="February 18, 2025"
-					/>
-				</li>
-				<li>
-					<Post
-						title="Reading for Inspiration: 5 Books That Shaped My Coding Journey"
-						link="blog/singleBlog"
-						date="February 15, 2025"
-					/>
-				</li>
-				<li>
-					<Post
-						title="Overcoming Imposter Syndrome as a New Developer"
-						link="blog/singleBlog"
-						date="February 10, 2025"
-					/>
-				</li>
-				<li>blog/singleBlog
-					<Post
-						title="Exploring the World of Responsive Design"
-						link="blog/singleBlog"
-						date="February 4, 2025"
-					/>
-				</li>
-				<li>
-					<Post
-						title="My Favorite Dev Tools for Productivity"
-						link="blog/singleBlog"
-						date="January 29, 2025"
-					/>
-				</li>
+				{
+					FirstsFivePost.map((post) => (
+						<li>
+							<Post post={post} showDescription={false} />
+						</li>
+					))
+				}
 			</ul>
 			<a
-				href="/blog"
+				href="/Astro-Blog/blog"
 				class="text-neutral-700 text-lg lineDown-a relative hover:text-neutral-600 hover:transition-all hover:duration-300 dark:text-white"
 			>
 				View all articles
@@ -87,5 +58,3 @@ const FirstsFivePost = posts.slice(0,5);
 		</div>
 	</main>
 </MainLayout>
-
-

@@ -1,14 +1,11 @@
 ---
-
 interface Props {
     name: string;
     link: string;
     border?: boolean;
-    active?: boolean;
 }
 
-const { name, link, border, active } = Astro.props;
-
+const { name, link, border } = Astro.props;
 ---
 
 <li
@@ -26,17 +23,31 @@ const { name, link, border, active } = Astro.props;
         href={`${link}`}
         >{name}
 
-        {
-            active && (
-                <div
-                    transition:name="animation-link"
-                    class="w-full h-1 bg-blue-300 hidden lg:block"
-                />
-            )
-        }
-        {!active && <div class:list={[`w-full h-1 bg-transparent hidden lg:block`]} />}
+        <div
+            transition:name="animation-link"
+            class="w-full h-1 bg-blue-300 hidden"
+        >
+        </div>
     </a>
 </li>
+
+<script is:inline>
+    const updateActiveNavItem = () => {
+        const menu = document.getElementById("menu");
+        const ItemsMenu = menu?.querySelectorAll("li a ");
+
+        ItemsMenu?.forEach((item) => {
+            if (item.getAttribute("href") === window.location.pathname) {
+                item.querySelector("div ")?.classList.add("navActive");
+
+                console.log("hola");
+            }
+        });
+    };
+    updateActiveNavItem();
+
+    document.addEventListener("astro:page-load", updateActiveNavItem);
+</script>
 
 <style is:inline>
     li a:hover div {

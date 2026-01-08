@@ -1,41 +1,109 @@
 ---
-title: "Learning by Building"
+title: "Learning by Building: Why Real Projects Teach More Than Tutorials"
 description: "Why building projects accelerates learning."
 pubDate: 2025-01-26
 slug: "learning-by-building"
-image: "learning-projects.jpg"
 ---
 
-# Learning by Building
+import Image from "@assets/images/posts/learning-projects.jpg";
 
-*Published January 26, 2025*
+import { Icon } from "astro-icon/components";
+import { Picture} from 'astro:assets';
 
-Projects expose real-world challenges that tutorials often hide.
+# Learning by Building:
+Why Real Projects Teach More Than Tutorials
+
+*Published 2025-01-26*
+
+Why building projects accelerates learning. This article explores the topic in depth, focusing on real-world frontend development decisions and long-term tradeoffs.
+
+> “Good software is rarely accidental; it is designed intentionally.”
 
 ---
 
-## Why Projects Matter
+## Context and Motivation
 
-- They reveal gaps
-- They force decisions
-- They build confidence
+Modern web development requires clarity, performance, and maintainability from day one.
 
-<blockquote data-callout="card" data-type="tip">
-  <div><img src="/src/icons/icon-tip.svg" alt="Tip" /> Tip</div>
-Finishing small projects teaches more than starting big ones.
+For additional context, see:
+[https://www.freecodecamp.org/news/learn-to-code-by-building-projects/](https://www.freecodecamp.org/news/learn-to-code-by-building-projects/)
+
+<blockquote data-callout="card" data-type="info">
+  <div><Icon  name="icon-info" />  Information</div>
+Static-first thinking reduces complexity and improves predictability.
 </blockquote>
 
 ---
 
+## Practical Example
+
+```js
+export function example() {
+  console.log("Example related to learning-by-building");
+}
+```
+
+<blockquote data-callout="card" data-type="tip">
+  <div><Icon  name="icon-tip" />  Tip</div>
+Always measure before optimizing or refactoring.
+</blockquote>
+
+---
+
+## Common Pitfalls
+
+- Over-engineering
+- Ignoring fundamentals
+- Skipping documentation
+
+<blockquote data-callout="card" data-type="warning">
+  <div><Icon  name="icon-warning" /> Warning</div>
+Small shortcuts often become long-term technical debt.
+</blockquote>
+
+---
+
+## Comparison Table
+
+<div class="table-wrapper">
+
+| Approach | Pros | Cons |
+|--------|------|------|
+| Simple | Easy to maintain | Limited flexibility |
+| Modular | Scalable | Requires discipline |
+| Complex | Powerful | High maintenance cost |
+
+</div>
+
+---
+
 ## Image Prompt
-Developer working through project milestones.
+Developer learning through projects.
 
-![Learning Projects](/src/assets/images/posts/learning-projects.jpg)
+<Picture
+  class="rounded-2xl"
+  src={Image}
+  formats={['webp','png']}
+  widths={[600, Image.width]}
+  sizes={`(max-width: 991px) 600px, (min-width: 992px) ${Image.width}`}
+  alt="Learning by Building illustration"
+  title="Learning by Building illustration"
+/>
 
-*Caption: Projects create real learning opportunities.*
+*Caption: Visual context for Learning by Building.*
+
+---
+
+## Long-Term Perspective
+
+> Decisions compound over time; clarity today saves effort tomorrow.
+
+- Clear abstractions
+- Explicit tradeoffs
+- Continuous learning
 
 ---
 
 ## Conclusion
 
-Learning accelerates when theory meets practice.
+Learning by Building is not a one-time task. It is an ongoing discipline that improves through experience and reflection.

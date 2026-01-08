@@ -1,0 +1,41 @@
+---
+import Title from "@components/ui/Title.astro";
+import Hr from "@components/ui/Hr.astro";
+import Post from "@components/blog/Post.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import PaginationItems from "@components/blog/PaginationItems.astro";
+
+const posts: CollectionEntry<"blog">[] = await getCollection("blog");
+
+const FirstFivePosts = posts.slice(0, 5);
+---
+
+<MainLayout
+    title="My Articles | Blog's Paulina front-end web Developer"
+    description="A collection of posts exploring front-end development, web design, personal projects, and practical insights from building real digital products."
+>
+    <main>
+        <div class="pt-8">
+            <div>
+                <Title title="Latest Articles" lineDown={true} />
+                <p>
+                    Below are all my recent blog posts. Click on any title to
+                    read the full article.
+                </p>
+            </div>
+            <Hr />
+            <ul class="flex flex-col pt-8 gap-6 mb-8">
+                {
+                    FirstFivePosts.map((post) => (
+                        <li>
+                            <Post post={post} showDescription={false} />
+                        </li>
+                    ))
+                }
+            </ul>
+            <PaginationItems currentPage={1} prevUrl={null} nextUrl="/Astro-Blog/blog/2" />
+        </div>
+    </main>
+</MainLayout>

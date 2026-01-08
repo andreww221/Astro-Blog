@@ -1,53 +1,109 @@
 ---
-title: "SEO for Static Sites"
+title: "SEO for Static Sites: How Performance, Semantics, and Structure Work Together"
 description: "Optimizing static sites for search engines."
 pubDate: 2025-01-20
 slug: "seo-for-static-sites"
-image: "seo-static-sites.jpg"
 ---
 
-# SEO for Static Sites
+import Image from "@assets/images/posts/seo-static-sites.jpg";
 
-*Published January 20, 2025*
+import { Icon } from "astro-icon/components";
+import { Picture} from 'astro:assets';
 
-Static sites provide fully rendered HTML, which gives search engines immediate access to content without relying on JavaScript execution.
+# SEO for Static Sites:
+How Performance, Semantics, and Structure Work Together
 
-> “Good SEO starts with fast, accessible content.”
+*Published 2025-01-20*
 
----
+Optimizing static sites for search engines. This article explores the topic in depth, focusing on real-world frontend development decisions and long-term tradeoffs.
 
-## Why Static Sites Are SEO-Friendly
-
-Static generation removes common SEO issues related to client-side rendering. Search engines receive clean, predictable markup.
-
-### Key Advantages
-- Fully rendered HTML
-- Fast load times
-- Minimal JavaScript
-- Clear URL structure
+> “Good software is rarely accidental; it is designed intentionally.”
 
 ---
 
-## Semantic HTML Structure
+## Context and Motivation
 
-```html
-<article>
-  <h1>Article title</h1>
-  <p>Main content</p>
-</article>
+Modern web development requires clarity, performance, and maintainability from day one.
+
+For additional context, see:
+[https://developer.mozilla.org/en-US/docs/Learn/SEO](https://developer.mozilla.org/en-US/docs/Learn/SEO)
+
+<blockquote data-callout="card" data-type="info">
+  <div><Icon  name="icon-info" />  Information</div>
+Static-first thinking reduces complexity and improves predictability.
+</blockquote>
+
+---
+
+## Practical Example
+
+```js
+export function example() {
+  console.log("Example related to seo-for-static-sites");
+}
 ```
+
+<blockquote data-callout="card" data-type="tip">
+  <div><Icon  name="icon-tip" />  Tip</div>
+Always measure before optimizing or refactoring.
+</blockquote>
+
+---
+
+## Common Pitfalls
+
+- Over-engineering
+- Ignoring fundamentals
+- Skipping documentation
+
+<blockquote data-callout="card" data-type="warning">
+  <div><Icon  name="icon-warning" /> Warning</div>
+Small shortcuts often become long-term technical debt.
+</blockquote>
+
+---
+
+## Comparison Table
+
+<div class="table-wrapper">
+
+| Approach | Pros | Cons |
+|--------|------|------|
+| Simple | Easy to maintain | Limited flexibility |
+| Modular | Scalable | Requires discipline |
+| Complex | Powerful | High maintenance cost |
+
+</div>
 
 ---
 
 ## Image Prompt
-Minimalist illustration of a fast static website with search engine icons.
+Fast static website with semantic HTML and search engine bots.
 
-![SEO Static Site](/src/assets/images/posts/seo-static-sites.jpg)
+<Picture
+  class="rounded-2xl"
+  src={Image}
+  formats={['webp','png']}
+  widths={[600, Image.width]}
+  sizes={`(max-width: 991px) 600px, (min-width: 992px) ${Image.width}`}
+  alt="SEO for Static Sites illustration"
+  title="SEO for Static Sites illustration"
+/>
 
-*Caption: Static sites deliver clean HTML for search engines.*
+*Caption: Visual context for SEO for Static Sites.*
+
+---
+
+## Long-Term Perspective
+
+> Decisions compound over time; clarity today saves effort tomorrow.
+
+- Clear abstractions
+- Explicit tradeoffs
+- Continuous learning
 
 ---
 
 ## Conclusion
 
-Static sites offer an excellent foundation for SEO when structure, performance, and metadata are handled intentionally.
+SEO for Static Sites is not a one-time task. It is an ongoing discipline that improves through experience and reflection.

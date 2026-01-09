@@ -24,6 +24,8 @@ const { title, description } = Astro.props;
         <meta name="author" content="Andrew Buitrago ☕️" />
         <meta name="robots" content="index, follow" />
         <title>{title}</title>
+        <meta name="description" content={description} />
+        
         <!-- Og tags -->
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />

@@ -37,6 +37,6 @@ Forma parte de mi portafolio como desarrollador frontend.
 - Importancia de una buena estructura en el proyecto
 
 
-## autor
+## Autor
 Desarrollador por **Andrew**
 Proyecto de portafolio personal
